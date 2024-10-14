@@ -28,17 +28,24 @@ public class Main {
         int x = vvod.nextInt();
         m.leftTriangle(x);*/
 
-/*3.5
-        m.guessGame();*/
+/*3.5*/
+        m.guessGame();
 
 
     }
 
     public String reverseListNums(int x) {
-        for (int i = x; i >= 0; i--) {
-            System.out.print(i + " ");
+        if (x>0) {
+            for (int i = x; i >= 0; i--) {
+                System.out.print(i + " ");
+            }
+            return "";
+        } else {
+            for (int i = x; i <= 0; i++) {
+                System.out.print(i + " ");
+            }
+            return "";
         }
-        return "";
     }
 
     public int pow(int x, int y) {
