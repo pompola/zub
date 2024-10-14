@@ -1,0 +1,129 @@
+import java.util.Scanner;
+import static java.lang.Math.abs;
+import java.util.Random;
+
+public class Main {
+    public static void main(String[] args) {
+        Main m = new Main();
+        Scanner vvod = new Scanner(System.in);
+        Random random = new Random();
+        int[] arr = new int[10]; // создаем рандомный массив
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = random.nextInt(-10);
+        }
+        System.out.print("Массив: "); // выводим массив
+        for (int i = 0; i < arr.length; i++) {
+            System.out.print(arr[i] + " ");
+        }
+        System.out.println();
+/* 4.1
+        System.out.print("Введите число для поиска: ");
+        int x = vvod.nextInt();
+        m.findLast(arr, x);*/
+/* 4.2
+        System.out.print("Введите позицию: ");
+        int pos = vvod.nextInt();
+        System.out.print("Введите x: ");
+        int x = vvod.nextInt();
+        m.add(arr, x, pos);*/
+
+/* 4.3
+        m.reverse(arr);*/
+
+/* 4.4
+        int[] arr2 = new int[10]; // создаем рандомный массив
+        for (int i = 0; i < arr2.length; i++) {
+            arr2[i] = random.nextInt(10);
+        }
+        System.out.print("Массив2: "); // выводим массив
+        for (int i = 0; i < arr2.length; i++) {
+            System.out.print(arr2[i] + " ");
+        }
+        System.out.println();
+        m.concat(arr, arr2);*/
+
+/*4.5
+        int[] arr  = {-1, 2, -3, 4, 5, -12};
+        int [] result = m.deleteNegative(arr);
+        System.out.print("Положительный массив: ");
+        for (int i : result) { // Цикл для вывода элементов массива
+            System.out.print(i + " ");
+        }*/
+    }
+
+    public int findLast (int[] arr, int x) {
+        for (int i = arr.length - 1; i >= 0; i--) {
+            if (arr[i] == x) {
+                System.out.print(i);
+                return i;
+            }
+        }
+        System.out.print("-1");
+        return -1;
+    }
+
+    public int[]add (int[] arr, int x, int pos) {
+        if (pos < 0 || pos > arr.length) {
+            System.out.println("неккоректная позиция");
+            return arr;
+        } else {
+            int[] newArr = new int[arr.length + 1];
+            for (int i = 0; i < pos; i++) {
+                newArr[i] = arr[i]; // элементы до позиции pos
+            }
+            newArr[pos] = x;
+            for (int i = pos + 1; i < newArr.length; i++) {
+                newArr[i] = arr[i - 1]; // оставшиеся элементы
+            }
+            System.out.print("Новый массив: "); // выводим массив
+            for (int i = 0; i < newArr.length; i++) {
+                System.out.print(newArr[i] + " ");
+            }
+            return newArr;
+        }
+
+    }
+
+    public void reverse (int[] arr) {
+        System.out.print("Массив наоборот: "); // выводим массив
+        for (int i = arr.length - 1; i >= 0; i--) {
+            System.out.print(arr[i] + " ");
+        }
+    }
+
+    public int[] concat (int[] arr,int[] arr2) {
+        System.out.print("Новый массив: ");
+        int[] result = new int[arr.length + arr2.length];
+        for (int i = 0; i < arr.length; i++) {
+            result[i] = arr[i];
+        }
+
+        for (int i = 0; i < arr2.length; i++) {
+            result[i + arr.length] = arr2[i];
+        }
+        for (int i : result) {
+            System.out.print(i + " ");
+        }
+        return result;
+
+    }
+
+    public int[] deleteNegative (int[] arr) {
+        int pos = 0;
+        for (int i : arr) {
+            if (i >= 0) {
+                pos++;
+            }
+        }
+        int[] result = new int[pos];
+        int j = 0;
+        for (int i : arr) {
+            if (i >= 0) {
+                result[j] = i;
+                j++;
+            }
+        }
+        return result;
+
+    }
+}
