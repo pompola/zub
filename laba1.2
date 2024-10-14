@@ -1,0 +1,137 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Main m = new Main();
+        Scanner vvod = new Scanner(System.in);
+/* 2.1
+        System.out.print("Введите x: ");
+        int x = vvod.nextInt();
+        System.out.print("Введите y: ");
+        int y = vvod.nextInt();
+        m.safeDiv (x, y);*/
+
+/* 2.2
+        System.out.print("Введите x: ");
+        int x = vvod.nextInt();
+        System.out.print("Введите y: ");
+        int y = vvod.nextInt();
+        m.makeDecision(x,y);*/
+
+/* 2.3
+        System.out.print("Введите x: ");
+        int x = vvod.nextInt();
+        System.out.print("Введите y: ");
+        int y = vvod.nextInt();
+        System.out.print("Введите z: ");
+        int z = vvod.nextInt();
+        m.sum3 (x, y, z);*/
+
+/* 2.4
+        System.out.print("Введите x: ");
+        int x = vvod.nextInt();
+        m.age(x);*/
+
+/*2.5
+        System.out.print("Введите название дня недели: ");
+        String x = vvod.nextLine();
+        m.printDays(x);*/
+
+
+    }
+
+    public double safeDiv (int x, int y) {
+        if (y == 0) {
+            System.out.println(0);
+            return 0;
+        } else {
+            System.out.println(x/y);
+            return (x/y);
+        }
+    }
+
+    public String makeDecision (int x, int y) {
+        if (x > y) {
+            System.out.println(x + ">" + y);
+        } else if (x < y) {
+            System.out.println(x + "<" + y);
+        } else {
+            System.out.println(x + "=" + y);
+        }
+        return "";
+    }
+
+    public boolean sum3 (int x, int y, int z) {
+        if (x + y == z) {
+            System.out.println("true");
+        } else if (x + z == y) {
+            System.out.println("true");
+        } else if (y + z == x) {
+            System.out.println("true");
+        } else {
+            System.out.println("false");
+        }
+
+        return false;
+    }
+
+    public String age (int x) {
+        if (x % 10 == 1 && x != 11) {
+            System.out.println(x + " год");
+        } else if (x % 10 == 2 || x % 10 == 3 || x % 10 == 4 || x != 12 || x != 13 || x != 14) {
+            System.out.println(x + " года");
+        } else {
+            System.out.println(x + " лет");
+        }
+        return "";
+    }
+
+    public void printDays (String x) {
+        switch (x) {
+            case "понедельник":
+                System.out.println("понедельник");
+                System.out.println("вторник");
+                System.out.println("среда");
+                System.out.println("четверг");
+                System.out.println("пятница");
+                System.out.println("суббота");
+                System.out.println("воскресенье");
+                break;
+            case "вторник":
+                System.out.println("вторник");
+                System.out.println("среда");
+                System.out.println("четверг");
+                System.out.println("пятница");
+                System.out.println("суббота");
+                System.out.println("воскресенье");
+                break;
+            case "среда":
+                System.out.println("среда");
+                System.out.println("четверг");
+                System.out.println("пятница");
+                System.out.println("суббота");
+                System.out.println("воскресенье");
+                break;
+            case "четверг":
+                System.out.println("четверг");
+                System.out.println("пятница");
+                System.out.println("суббота");
+                System.out.println("воскресенье");
+                break;
+            case "пятница":
+                System.out.println("пятница");
+                System.out.println("суббота");
+                System.out.println("воскресенье");
+                break;
+            case "суббота":
+                System.out.println("суббота");
+                System.out.println("воскресенье");
+                break;
+            case "воскресенье":
+                System.out.println("воскресенье");
+                break;
+            default:
+                System.out.println("это не день недели");
+        }
+    }
+}
