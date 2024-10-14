@@ -32,22 +32,22 @@ public class Main {
             int b = vvod.nextInt();
             a = m.lastNumSum(a, b);
             System.out.println("Итого: " + a);*/
-        }
     }
 
-    public int sumLastNums(int x) {
 
+    public int sumLastNums(int x) {
+    
         if (x < 10 && (-10) < x) {
             System.out.println("Должно быть не менее 2 знаков");
         } else {
             int y = x % 10;
             int z = (x / 10) % 10;
             System.out.println(abs(y + z));
-
+    
         }
         return x;
     }
-
+    
     public boolean isPositive(int x) {
         if (x > 0) {
             System.out.println("true");
@@ -60,7 +60,7 @@ public class Main {
             return false;
         }
     }
-
+    
     public boolean isUpperCase(char x) {
         if (Character.isLetter(x)) {
             if(Character.isUpperCase(x)) {
@@ -88,7 +88,7 @@ public class Main {
         }
     }
     public int lastNumSum(int a, int b) {
-         a = (a % 10) + (b % 10);
+        a = (a % 10) + (b % 10);
         return a;
     }
 }
